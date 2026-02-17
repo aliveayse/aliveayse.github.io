@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>DearUs — Timeless Letters</title>
+<title>DearUs — Zamana Yazılmış Mektuplar</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg: #f6f1ea;
-  --text: #1f1f1f;
-  --muted: #7c746c;
-  --accent: #b7a48a;
+  --bg:#f6f1ea;
+  --text:#1f1f1f;
+  --muted:#7c746c;
+  --accent:#b7a48a;
 }
 
 *{box-sizing:border-box}
@@ -24,7 +24,7 @@ body{
   color:var(--text);
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
   min-height:100vh;
   display:flex;
@@ -35,6 +35,65 @@ body{
   padding:40px 20px;
 }
 
+/* MAP */
+.map-wrapper{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom:50px;
+  animation:fadeIn 1.4s ease;
+}
+
+.map-title{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  margin-bottom:24px;
+  color:var(--text);
+  letter-spacing:.04em;
+}
+
+.map-circle{
+  width:320px;
+  height:320px;
+  border-radius:50%;
+  overflow:hidden;
+  box-shadow:0 25px 60px rgba(0,0,0,0.18);
+  border:6px solid rgba(255,255,255,0.7);
+  position:relative;
+  transition:transform .6s ease, box-shadow .6s ease;
+}
+
+.map-circle:hover{
+  transform:scale(1.05);
+  box-shadow:0 35px 80px rgba(0,0,0,0.25);
+}
+
+.map-circle img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  animation:zoomIn 1.8s ease;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes zoomIn{
+  from{opacity:0; transform:scale(0.9);}
+  to{opacity:1; transform:scale(1);}
+}
+
+@media(max-width:600px){
+  .map-circle{
+    width:260px;
+    height:260px;
+  }
+}
+
+/* BRAND */
 .brand{
   font-family:'Playfair Display',serif;
   font-size:42px;
@@ -46,19 +105,42 @@ body{
   letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--muted);
-  margin-bottom:50px;
+  margin-bottom:40px;
 }
 
-/* ===== MAIN LINE ===== */
+/* STATEMENT */
 .statement{
   font-family:'Playfair Display',serif;
   font-size:28px;
   line-height:1.4;
   max-width:720px;
-  margin-bottom:40px;
+  margin-bottom:30px;
 }
 
-/* ===== SOFT DIVIDER ===== */
+/* COUNTDOWN */
+.countdown{
+  display:flex;
+  gap:20px;
+  margin:30px 0 40px;
+}
+
+.time-box{
+  min-width:70px;
+}
+
+.time{
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+}
+
+.label{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* DIVIDER */
 .divider{
   width:80px;
   height:1px;
@@ -66,7 +148,7 @@ body{
   margin:40px auto;
 }
 
-/* ===== EXPLANATION ===== */
+/* EXPLAIN */
 .explain{
   max-width:720px;
   font-size:16px;
@@ -74,7 +156,7 @@ body{
   color:#333;
 }
 
-/* ===== STEPS ===== */
+/* STEPS */
 .steps{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -88,7 +170,6 @@ body{
   background:rgba(255,255,255,0.6);
   border-radius:18px;
   padding:28px 22px;
-  backdrop-filter: blur(6px);
 }
 
 .step h3{
@@ -103,17 +184,11 @@ body{
   line-height:1.6;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .footer{
   margin-top:80px;
   font-size:12px;
   color:var(--muted);
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:600px){
-  .statement{font-size:24px}
-  .brand{font-size:36px}
 }
 </style>
 </head>
@@ -122,57 +197,114 @@ body{
 
 <section class="hero">
 
+  <!-- HARITA -->
+  <div class="map-wrapper">
+    <div class="map-title">
+      Burayı hatırladın mı sevgilim?
+    </div>
+
+    <div class="map-circle">
+      <img src="harita.png" alt="Harita">
+    </div>
+  </div>
+
   <div class="brand">DearUs</div>
-  <div class="tagline">Timeless Letters</div>
+  <div class="tagline">Zamana Yazılmış Mektuplar</div>
 
   <div class="statement">
-    A letter written today,<br>
-    meant to be opened<br>
-    when the time is right.
+    Bugün yazılan bir mektup,<br>
+    doğru zamanda açılmak için.
+  </div>
+
+  <div class="countdown">
+    <div class="time-box">
+      <div class="time" id="days">--</div>
+      <div class="label">Gün</div>
+    </div>
+    <div class="time-box">
+      <div class="time" id="hours">--</div>
+      <div class="label">Saat</div>
+    </div>
+    <div class="time-box">
+      <div class="time" id="minutes">--</div>
+      <div class="label">Dakika</div>
+    </div>
+    <div class="time-box">
+      <div class="time" id="seconds">--</div>
+      <div class="label">Saniye</div>
+    </div>
   </div>
 
   <div class="divider"></div>
 
   <div class="explain">
-    DearUs creates physical letters connected to the digital world.<br><br>
-    Each piece carries a message written once —  
-    sealed with time, memory, and intention.<br><br>
-    Some are opened on anniversaries.  
-    Some on weddings.  
-    Some years later, when life feels different.
+    DearUs, fiziksel mektupları dijital zamanla buluşturur.<br><br>
+    Her parça yalnızca bir kez yazılan bir mesaj taşır —  
+    anıyla, niyetle ve bekleyişle mühürlenmiş.<br><br>
+    Bazıları yıldönümünde açılır.  
+    Bazıları özel bir günde.  
+    Bazıları ise hayat bambaşka bir yerdeyken.
   </div>
 
   <div class="steps">
     <div class="step">
-      <h3>Write</h3>
+      <h3>Yaz</h3>
       <p>
-        Write a message meant for the future —  
-        honest, personal, and timeless.
+        Geleceğe bırakılacak bir mesaj yaz —  
+        samimi, kişisel ve zamansız.
       </p>
     </div>
 
     <div class="step">
-      <h3>Seal</h3>
+      <h3>Mühürle</h3>
       <p>
-        Your letter is sealed into a physical piece,  
-        quietly holding its moment.
+        Mektubun fiziksel bir parçaya dönüşür,  
+        sessizce anını saklar.
       </p>
     </div>
 
     <div class="step">
-      <h3>Open</h3>
+      <h3>Aç</h3>
       <p>
-        When the time comes,  
-        the letter reveals itself — exactly once.
+        Zamanı geldiğinde,  
+        mektup kendini yalnızca bir kez açar.
       </p>
     </div>
   </div>
 
   <div class="footer">
-    © DearUs — Written once. Opened when it matters.
+    © DearUs — Bir kez yazılır. Zamanı gelince açılır.
   </div>
 
 </section>
+
+<script>
+const targetDate = new Date("2026-04-26T00:00:00").getTime();
+
+function updateCountdown(){
+  const now = new Date().getTime();
+  const diff = targetDate - now;
+
+  if(diff <= 0){
+    document.querySelector(".countdown").innerHTML =
+      "<div class='statement'>Zaman geldi.</div>";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+</script>
 
 </body>
 </html>
