@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DearUs — Timeless Letters</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg: #f6f1ea;
+  --text: #1f1f1f;
+  --muted: #7c746c;
+  --accent: #b7a48a;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+}
+
+.brand{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.tagline{
+  font-size:14px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:50px;
+}
+
+/* ===== MAIN LINE ===== */
+.statement{
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  line-height:1.4;
+  max-width:720px;
+  margin-bottom:40px;
+}
+
+/* ===== SOFT DIVIDER ===== */
+.divider{
+  width:80px;
+  height:1px;
+  background:var(--accent);
+  margin:40px auto;
+}
+
+/* ===== EXPLANATION ===== */
+.explain{
+  max-width:720px;
+  font-size:16px;
+  line-height:1.7;
+  color:#333;
+}
+
+/* ===== STEPS ===== */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  margin-top:60px;
+  max-width:900px;
+  width:100%;
+}
+
+.step{
+  background:rgba(255,255,255,0.6);
+  border-radius:18px;
+  padding:28px 22px;
+  backdrop-filter: blur(6px);
+}
+
+.step h3{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.step p{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  margin-top:80px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:600px){
+  .statement{font-size:24px}
+  .brand{font-size:36px}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+  <div class="brand">DearUs</div>
+  <div class="tagline">Timeless Letters</div>
+
+  <div class="statement">
+    A letter written today,<br>
+    meant to be opened<br>
+    when the time is right.
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="explain">
+    DearUs creates physical letters connected to the digital world.<br><br>
+    Each piece carries a message written once —  
+    sealed with time, memory, and intention.<br><br>
+    Some are opened on anniversaries.  
+    Some on weddings.  
+    Some years later, when life feels different.
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <h3>Write</h3>
+      <p>
+        Write a message meant for the future —  
+        honest, personal, and timeless.
+      </p>
+    </div>
+
+    <div class="step">
+      <h3>Seal</h3>
+      <p>
+        Your letter is sealed into a physical piece,  
+        quietly holding its moment.
+      </p>
+    </div>
+
+    <div class="step">
+      <h3>Open</h3>
+      <p>
+        When the time comes,  
+        the letter reveals itself — exactly once.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    © DearUs — Written once. Opened when it matters.
+  </div>
+
+</section>
+
+</body>
+</html>
