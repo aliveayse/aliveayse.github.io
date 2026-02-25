@@ -139,7 +139,6 @@ body{
 
   <div class="map-text">
     Burayı hatırladın mı sevgilim?<br>
-    Tabii ki hatırladın.<br>
     Burası bizi birbirimize kavuşturan yer.
   </div>
 </section>
@@ -148,8 +147,8 @@ body{
 <section class="section">
   <div class="gallery">
 
-    <div class="polaroid"><img src="resim1.jpeg"><div class="caption">metin1</div></div>
-    <div class="polaroid"><img src="resim2.jpeg"><div class="caption">metin2</div></div>
+    <div class="polaroid"><img src="resim1.jpeg"><div class="caption">Bu kahve senin kalbimde olduğun andan sonra içtiğim ilk kahve. Kırkıncı yılımızda ilk aklına bu kahve gelsin olur mu?</div></div>
+    <div class="polaroid"><img src="resim2.jpeg"><div class="caption">Gözler kalbim <br> Her bakışını <br> Bir saniye bile istemem <br> Ayrılsın gözlerin gözlerimden </div></div>
     <div class="polaroid"><img src="resim3.jpeg"><div class="caption">metin3</div></div>
     <div class="polaroid"><img src="resim4.jpeg"><div class="caption">metin4</div></div>
     <div class="polaroid"><img src="resim5.jpeg"><div class="caption">metin5</div></div>
@@ -206,8 +205,19 @@ function updateCountdown(){
 
 setInterval(updateCountdown,1000);
 updateCountdown();
+  const music = document.getElementById("bg-music");
+
+function startMusic(){
+  music.play();
+  document.removeEventListener("click", startMusic);
+  document.removeEventListener("touchstart", startMusic);
+}
+
+document.addEventListener("click", startMusic);
+document.addEventListener("touchstart", startMusic);
 </script>
 
 </body>
 </html>
+
 
