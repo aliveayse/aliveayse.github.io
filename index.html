@@ -12,10 +12,7 @@
   --bg:#f6f1ea;
   --text:#1f1f1f;
   --muted:#7c746c;
-  --accent:#b7a48a;
 }
-
-*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -25,17 +22,17 @@ body{
   text-align:center;
 }
 
-/* GENEL BÖLÜM */
+/* GENEL */
 .section{
   padding:60px 20px;
-  max-width:1000px;
+  max-width:700px;
   margin:auto;
 }
 
 /* BAŞLIK */
 .brand{
   font-family:'Playfair Display',serif;
-  font-size:44px;
+  font-size:42px;
 }
 
 .tagline{
@@ -47,12 +44,12 @@ body{
 
 /* HARİTA */
 .map-circle{
-  width:300px;
-  height:300px;
+  width:260px;
+  height:260px;
   border-radius:50%;
   overflow:hidden;
   margin:30px auto;
-  box-shadow:0 25px 60px rgba(0,0,0,0.15);
+  box-shadow:0 20px 50px rgba(0,0,0,0.15);
 }
 
 .map-circle img{
@@ -63,51 +60,49 @@ body{
 
 .map-text{
   font-family:'Playfair Display',serif;
-  font-size:22px;
-  line-height:1.5;
-  max-width:600px;
-  margin:auto;
+  font-size:20px;
+  line-height:1.6;
 }
 
-/* FOTOĞRAF ALANI */
+/* FOTOĞRAFLAR ALT ALTA */
 .gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:40px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:70px;
   margin-top:40px;
 }
 
 .polaroid{
   background:white;
-  padding:12px 12px 20px;
+  padding:12px 12px 22px;
   box-shadow:0 15px 35px rgba(0,0,0,0.15);
-  transform:rotate(-1deg);
+  width:320px;
+  max-width:90%;
   transition:.4s;
 }
 
 .polaroid:hover{
-  transform:rotate(0deg) scale(1.05);
+  transform:scale(1.03);
 }
 
 .polaroid img{
   width:100%;
-  height:260px;
+  height:360px;
   object-fit:cover;
 }
 
 .caption{
-  margin-top:10px;
+  margin-top:12px;
   font-size:14px;
   color:#444;
 }
 
 /* MEKTUP */
 .letter{
-  max-width:700px;
-  margin:auto;
-  line-height:1.8;
-  font-size:17px;
   text-align:left;
+  line-height:1.9;
+  font-size:17px;
 }
 
 /* COUNTDOWN */
@@ -128,17 +123,12 @@ body{
   color:var(--muted);
   letter-spacing:.1em;
 }
-
-@media(max-width:600px){
-  .brand{font-size:36px}
-  .map-circle{width:240px;height:240px}
-}
 </style>
 </head>
 
 <body>
 
-<!-- ÜST BAŞLIK -->
+<!-- BAŞLIK + HARİTA -->
 <section class="section">
   <div class="brand">DearUs</div>
   <div class="tagline">ZAMANA YAZILMIŞ MEKTUPLAR</div>
@@ -158,125 +148,26 @@ body{
 <section class="section">
   <div class="gallery">
 
-    <!-- 1 -->
-    <div class="polaroid">
-      <img src="resim1.jpg">
-      <div class="caption">metin1</div>
-    </div>
-
-    <!-- 2 -->
-    <div class="polaroid">
-      <img src="resim2.jpg">
-      <div class="caption">metin2</div>
-    </div>
-
-    <!-- 3 -->
-    <div class="polaroid">
-      <img src="resim3.jpg">
-      <div class="caption">metin3</div>
-    </div>
-
-    <!-- 4 -->
-    <div class="polaroid">
-      <img src="resim4.jpg">
-      <div class="caption">metin4</div>
-    </div>
-
-    <!-- 5 -->
-    <div class="polaroid">
-      <img src="resim5.jpg">
-      <div class="caption">metin5</div>
-    </div>
-
-    <!-- 6 -->
-    <div class="polaroid">
-      <img src="resim6.jpg">
-      <div class="caption">metin6</div>
-    </div>
-
-    <!-- 7 -->
-    <div class="polaroid">
-      <img src="resim7.jpg">
-      <div class="caption">metin7</div>
-    </div>
-
-    <!-- 8 -->
-    <div class="polaroid">
-      <img src="resim8.jpg">
-      <div class="caption">metin8</div>
-    </div>
-
-    <!-- 9 -->
-    <div class="polaroid">
-      <img src="resim9.jpg">
-      <div class="caption">metin9</div>
-    </div>
-
-    <!-- 10 -->
-    <div class="polaroid">
-      <img src="resim10.jpg">
-      <div class="caption">metin10</div>
-    </div>
-
-    <!-- 11 -->
-    <div class="polaroid">
-      <img src="resim11.jpg">
-      <div class="caption">metin11</div>
-    </div>
-
-    <!-- 12 -->
-    <div class="polaroid">
-      <img src="resim12.jpg">
-      <div class="caption">metin12</div>
-    </div>
-
-    <!-- 13 -->
-    <div class="polaroid">
-      <img src="resim13.jpg">
-      <div class="caption">metin13</div>
-    </div>
-
-    <!-- 14 -->
-    <div class="polaroid">
-      <img src="resim14.jpg">
-      <div class="caption">metin14</div>
-    </div>
-
-    <!-- 15 -->
-    <div class="polaroid">
-      <img src="resim15.jpg">
-      <div class="caption">metin15</div>
-    </div>
-
-    <!-- 16 -->
-    <div class="polaroid">
-      <img src="resim16.jpg">
-      <div class="caption">metin16</div>
-    </div>
-
-    <!-- 17 -->
-    <div class="polaroid">
-      <img src="resim17.jpg">
-      <div class="caption">metin17</div>
-    </div>
-
-    <!-- 18 -->
-    <div class="polaroid">
-      <img src="resim18.jpg">
-      <div class="caption">metin18</div>
-    </div>
-
-    <!-- 19 -->
-    <div class="polaroid">
-      <img src="resim19.jpg">
-      <div class="caption">metin19</div>
-    </div>
-
-    <!-- 20 -->
-    <div class="polaroid">
-      <img src="resim20.jpg">
-      <div class="caption">metin20</div>
-    </div>
+    <div class="polaroid"><img src="resim1.jpg"><div class="caption">metin1</div></div>
+    <div class="polaroid"><img src="resim2.jpg"><div class="caption">metin2</div></div>
+    <div class="polaroid"><img src="resim3.jpg"><div class="caption">metin3</div></div>
+    <div class="polaroid"><img src="resim4.jpg"><div class="caption">metin4</div></div>
+    <div class="polaroid"><img src="resim5.jpg"><div class="caption">metin5</div></div>
+    <div class="polaroid"><img src="resim6.jpg"><div class="caption">metin6</div></div>
+    <div class="polaroid"><img src="resim7.jpg"><div class="caption">metin7</div></div>
+    <div class="polaroid"><img src="resim8.jpg"><div class="caption">metin8</div></div>
+    <div class="polaroid"><img src="resim9.jpg"><div class="caption">metin9</div></div>
+    <div class="polaroid"><img src="resim10.jpg"><div class="caption">metin10</div></div>
+    <div class="polaroid"><img src="resim11.jpg"><div class="caption">metin11</div></div>
+    <div class="polaroid"><img src="resim12.jpg"><div class="caption">metin12</div></div>
+    <div class="polaroid"><img src="resim13.jpg"><div class="caption">metin13</div></div>
+    <div class="polaroid"><img src="resim14.jpg"><div class="caption">metin14</div></div>
+    <div class="polaroid"><img src="resim15.jpg"><div class="caption">metin15</div></div>
+    <div class="polaroid"><img src="resim16.jpg"><div class="caption">metin16</div></div>
+    <div class="polaroid"><img src="resim17.jpg"><div class="caption">metin17</div></div>
+    <div class="polaroid"><img src="resim18.jpg"><div class="caption">metin18</div></div>
+    <div class="polaroid"><img src="resim19.jpg"><div class="caption">metin19</div></div>
+    <div class="polaroid"><img src="resim20.jpg"><div class="caption">metin20</div></div>
 
   </div>
 </section>
@@ -288,29 +179,15 @@ body{
   </div>
 </section>
 
-<!-- COUNTDOWN -->
+<!-- GERİ SAYIM -->
 <section class="section">
-  <div class="brand" style="font-size:26px;">
-    26 Nisan 2026
-  </div>
+  <div class="brand" style="font-size:26px;">26 Nisan 2026</div>
 
   <div class="countdown">
-    <div>
-      <div class="time" id="days">--</div>
-      <div class="label">GÜN</div>
-    </div>
-    <div>
-      <div class="time" id="hours">--</div>
-      <div class="label">SAAT</div>
-    </div>
-    <div>
-      <div class="time" id="minutes">--</div>
-      <div class="label">DAKİKA</div>
-    </div>
-    <div>
-      <div class="time" id="seconds">--</div>
-      <div class="label">SANİYE</div>
-    </div>
+    <div><div class="time" id="days">--</div><div class="label">GÜN</div></div>
+    <div><div class="time" id="hours">--</div><div class="label">SAAT</div></div>
+    <div><div class="time" id="minutes">--</div><div class="label">DAKİKA</div></div>
+    <div><div class="time" id="seconds">--</div><div class="label">SANİYE</div></div>
   </div>
 </section>
 
@@ -321,15 +198,10 @@ function updateCountdown(){
   const now = new Date().getTime();
   const diff = targetDate - now;
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-
-  document.getElementById("days").innerText = days;
-  document.getElementById("hours").innerText = hours;
-  document.getElementById("minutes").innerText = minutes;
-  document.getElementById("seconds").innerText = seconds;
+  document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+  document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
 }
 
 setInterval(updateCountdown,1000);
