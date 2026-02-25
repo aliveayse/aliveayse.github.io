@@ -15,6 +15,10 @@
 }
 
 body{
+  <audio id="bgMusic" loop preload="auto">
+  <source src="muzik.mp3" type="audio/mpeg">
+</audio>
+  
   margin:0;
   font-family:'Inter',sans-serif;
   background:var(--bg);
@@ -216,8 +220,24 @@ function startMusic(){
 document.addEventListener("click", startMusic);
 document.addEventListener("touchstart", startMusic);
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const music = document.getElementById("bgMusic");
 
+  function startMusic() {
+    music.play().catch(() => {});
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("touchstart", startMusic);
+    document.removeEventListener("scroll", startMusic);
+  }
+
+  document.addEventListener("click", startMusic);
+  document.addEventListener("touchstart", startMusic);
+  document.addEventListener("scroll", startMusic);
+});
+</script>
 </body>
 </html>
+
 
 
